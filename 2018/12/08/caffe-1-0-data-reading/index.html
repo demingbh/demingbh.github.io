@@ -109,13 +109,14 @@
 
 
   <meta name="description" content="Classes base_data_layer.hpp 1234class Batch &amp;#123; public: Blob data_, lable_; &amp;#125;class BaseDataLayer : public Layerclass BasePrefetchingDataLayer    : public BaseDataLayer, public InternalThread">
+<meta name="keywords" content="caffe">
 <meta property="og:type" content="article">
 <meta property="og:title" content="caffe-1.0 代码分析：数据读取">
 <meta property="og:url" content="http://yoursite.com/2018/12/08/caffe-1-0-data-reading/index.html">
 <meta property="og:site_name" content="Deming&#39;s Blog">
 <meta property="og:description" content="Classes base_data_layer.hpp 1234class Batch &amp;#123; public: Blob data_, lable_; &amp;#125;class BaseDataLayer : public Layerclass BasePrefetchingDataLayer    : public BaseDataLayer, public InternalThread">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-12-08T02:23:21.604Z">
+<meta property="og:updated_time" content="2018-12-09T10:41:47.584Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="caffe-1.0 代码分析：数据读取">
 <meta name="twitter:description" content="Classes base_data_layer.hpp 1234class Batch &amp;#123; public: Blob data_, lable_; &amp;#125;class BaseDataLayer : public Layerclass BasePrefetchingDataLayer    : public BaseDataLayer, public InternalThread">
@@ -238,6 +239,40 @@
         
         
           
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
           <li class="menu-item menu-item-archives">
 
     
@@ -342,16 +377,46 @@
                 
               
 
-              <time title="Created: 2018-12-08 10:14:38 / Modified: 10:23:21" itemprop="dateCreated datePublished" datetime="2018-12-08T10:14:38+08:00">2018-12-08</time>
+              <time title="Created: 2018-12-08 10:14:38" itemprop="dateCreated datePublished" datetime="2018-12-08T10:14:38+08:00">2018-12-08</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-12-09 18:41:47" itemprop="dateModified" datetime="2018-12-09T18:41:47+08:00">2018-12-09</time>
               
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/代码阅读/" itemprop="url" rel="index"><span itemprop="name">代码阅读</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -412,7 +477,7 @@
 <li><p>静态类 Caffe 是线程独立的</p>
 </li>
 <li><p>void InternalThread::StartInternalThread()<br>StartInternalThread 创建 boost::thread，运行 entry 函数</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> InternalThread::StartInternalThread() &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    thread_.reset(</span><br><span class="line">        <span class="keyword">new</span> boost::thread(&amp;InternalThread::entry：,</span><br><span class="line">                          <span class="keyword">this</span>, device, mode, rand_seed,</span><br><span class="line">                          solver_count, solver_rank, multiprocess));</span><br><span class="line">  &#125; <span class="keyword">catch</span> (<span class="built_in">std</span>::exception&amp; e) &#123;</span><br><span class="line">    LOG(FATAL) &lt;&lt; <span class="string">"Thread exception: "</span> &lt;&lt; e.what();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> InternalThread::StartInternalThread() &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    thread_.reset(</span><br><span class="line">      <span class="keyword">new</span> boost::thread(&amp;InternalThread::entry：,</span><br><span class="line">                        <span class="keyword">this</span>, device, mode, rand_seed,</span><br><span class="line">                        solver_count, solver_rank, multiprocess));</span><br><span class="line">  &#125; <span class="keyword">catch</span> (<span class="built_in">std</span>::exception&amp; e) &#123;</span><br><span class="line">    LOG(FATAL) &lt;&lt; <span class="string">"Thread exception: "</span> &lt;&lt; e.what();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>void InternalThread::entry(…)<br>entry 调用 InternalThreadEntry，后者是虚函数，在子类中定义。</p>
 </li>
@@ -449,6 +514,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/caffe/" rel="tag"># caffe</a>
+          
+        </div>
       
 
       
@@ -528,7 +599,33 @@
               
 
               
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
 
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
               
             </nav>
           
