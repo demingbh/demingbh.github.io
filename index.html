@@ -376,7 +376,7 @@
                 
               
 
-              <time title="Created: 2018-12-11 12:18:39 / Modified: 14:09:04" itemprop="dateCreated datePublished" datetime="2018-12-11T12:18:39+08:00">2018-12-11</time>
+              <time title="Created: 2018-12-11 12:18:39 / Modified: 14:15:48" itemprop="dateCreated datePublished" datetime="2018-12-11T12:18:39+08:00">2018-12-11</time>
             
 
             
@@ -494,7 +494,7 @@
 <blockquote>
 <p>5.5. 的结果说明中，teacher model 和 student model 属于不同的 family 时，prediction 的分布是不同的，对 distillation 有负面影响。</p>
 </blockquote>
-<h3 id="5-4-Mixup-Training"><a href="#5-4-Mixup-Training" class="headerlink" title="5.4. Mixup Training"></a>5.4. Mixup Training</h3><p>augmentation method: mixup [29]<br>In mixup, each time we randomly sample two examples $(x_i, y_i)$ and $(x_j, y_j)$. Then we form a new example by a weighted linear inerpolation of these two examples:<br>$$ \hat{x} = \lambda x_i + (1-\lambda) x_j,<br>\ \hat{y} = \lambda y_i + (1-\lambda) y_j, $$<br>where $\lambda \in [0,1]$ is a random number drawn from the $\mathbf{Beta}(\alpha,\alpha)$ distribution. In mixup training, we only use the new example $(\hat{x}, \hat{y})$.</p>
+<h3 id="5-4-Mixup-Training"><a href="#5-4-Mixup-Training" class="headerlink" title="5.4. Mixup Training"></a>5.4. Mixup Training</h3><p>augmentation method: mixup [29]<br>In mixup, each time we randomly sample two examples $(x_i, y_i)$ and $(x_j, y_j)$. Then we form a new example by a weighted linear inerpolation of these two examples:<br>$$ \hat{x} = \lambda x_i + (1-\lambda) x_j, \\<br>   \hat{y} = \lambda y_i + (1-\lambda) y_j, $$<br>where $\lambda \in [0,1]$ is a random number drawn from the $\mathbf{Beta}(\alpha,\alpha)$ distribution. In mixup training, we only use the new example $(\hat{x}, \hat{y})$.</p>
 <h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><ul>
 <li>NASNet [34]<br>cvpr2018 - Learning Transferable Architectures for Scalable Image Recognition</li>
 <li>MobileNet [11]</li>
