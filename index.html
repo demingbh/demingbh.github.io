@@ -331,6 +331,175 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/11/hexo-notes-latex-equations/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Deming Zhao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Deming's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/12/11/hexo-notes-latex-equations/" class="post-title-link" itemprop="http://yoursite.com/index.html">Hexo Notes - NexT 主题下的 LaTeX 公式设置</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-12-11 22:32:52 / Modified: 23:05:07" itemprop="dateCreated datePublished" datetime="2018-12-11T22:32:52+08:00">2018-12-11</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/HexoNotes/" itemprop="url" rel="index"><span itemprop="name">HexoNotes</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>NexT 本版：hexo-theme-next-6.6.0</strong><br>此版本 NexT 内建了渲染支持，不需要额外安装东西。</p>
+<h3 id="需要修改的文件"><a href="#需要修改的文件" class="headerlink" title="需要修改的文件"></a>需要修改的文件</h3><ul>
+<li>themes/next/_config.yml<br>打开 <code>math</code> 选项，选择 <code>engine: mathjax</code>、<code>per_page: true</code>;<br><code>mathjax</code> 下面的几个 <code>cdn</code>，NexT 官方是推荐第一个，但是我本地 <code>hexo s</code> 之后，打开页面公式显示正常，但是等十几秒，所有公式就都消失了，变成了红字的错误提示，F12 看了下，正是 <code>cdn</code> 出了问题，换成第二个就正常了。</li>
+<li>source/_posts 里面的 blog 文件<br>由于 next/_config.yml 中设置了 <code>per_page: true</code>，意思是为了提高渲染速度，针对每个 page 决定是否启用 MathJax 渲染，这样就需要在每篇 blog 头部添加 <code>mathjax: true</code> 以打开 MathJax 渲染，设置为 <code>false</code>，或者没有设置，则是关闭 MathJax 渲染。</li>
+</ul>
+<p>有些奇怪，我的 Hexo 版本是 3.8.0，这样设置公式就显示正常了，并不需要其他操作了。</p>
+<ul>
+<li>NexT 的 Github 页面上，给出的教程是要求卸载 <code>hexo-renderer-marked</code>，安装 <code>hexo-renderer-pandoc</code>，但是我这么弄了之后，<code>hexo g</code> 就报 pandoc 错误，换回 <code>hexo-renderer-marked</code> 就正常了。</li>
+<li>还有的教程上让安装 <code>hexo-math</code> 插件，但是如果使用了 NexT 主题，也不要了。</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/11/bag-of-tricks-for-image-cls-with-cnn/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -376,7 +545,7 @@
                 
               
 
-              <time title="Created: 2018-12-11 12:18:39 / Modified: 14:17:28" itemprop="dateCreated datePublished" datetime="2018-12-11T12:18:39+08:00">2018-12-11</time>
+              <time title="Created: 2018-12-11 12:18:39 / Modified: 22:14:08" itemprop="dateCreated datePublished" datetime="2018-12-11T12:18:39+08:00">2018-12-11</time>
             
 
             
@@ -494,7 +663,7 @@
 <blockquote>
 <p>5.5. 的结果说明中，teacher model 和 student model 属于不同的 family 时，prediction 的分布是不同的，对 distillation 有负面影响。</p>
 </blockquote>
-<h3 id="5-4-Mixup-Training"><a href="#5-4-Mixup-Training" class="headerlink" title="5.4. Mixup Training"></a>5.4. Mixup Training</h3><p>augmentation method: mixup [29]<br>In mixup, each time we randomly sample two examples $(x_i, y_i)$ and $(x_j, y_j)$. Then we form a new example by a weighted linear inerpolation of these two examples:<br>$$ \hat{x} = \lambda x_i + (1-\lambda) x_j, $$<br>$$ \hat{y} = \lambda y_i + (1-\lambda) y_j, $$<br>where $\lambda \in [0,1]$ is a random number drawn from the $\mathbf{Beta}(\alpha,\alpha)$ distribution. In mixup training, we only use the new example $(\hat{x}, \hat{y})$.</p>
+<h3 id="5-4-Mixup-Training"><a href="#5-4-Mixup-Training" class="headerlink" title="5.4. Mixup Training"></a>5.4. Mixup Training</h3><p>augmentation method: mixup [29]<br>In mixup, each time we randomly sample two examples $(x_i, y_i)$ and $(x_j, y_j)$. Then we form a new example by a weighted linear inerpolation of these two examples:<br>$$\begin{align}<br>\hat{x} = \lambda x_i + (1-\lambda) x_j, \nonumber \\<br>\hat{y} = \lambda y_i + (1-\lambda) y_j, \nonumber<br>\end{align}$$<br>where $\lambda \in [0,1]$ is a random number drawn from the $\mathbf{Beta}(\alpha,\alpha)$ distribution. In mixup training, we only use the new example $(\hat{x}, \hat{y})$.</p>
 <h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><ul>
 <li>NASNet [34]<br>cvpr2018 - Learning Transferable Architectures for Scalable Image Recognition</li>
 <li>MobileNet [11]</li>
@@ -586,7 +755,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/12/08/caffe-1-0-data-reading/" class="post-title-link" itemprop="http://yoursite.com/index.html">caffe-1.0 代码分析：数据读取</a>
+                <a href="/2018/12/08/caffe-1-0-data-reading/" class="post-title-link" itemprop="http://yoursite.com/index.html">caffe-1.0 代码分析 - 数据读取</a>
               
             
           </h1>
@@ -628,7 +797,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-09 18:41:47" itemprop="dateModified" datetime="2018-12-09T18:41:47+08:00">2018-12-09</time>
+                <time title="Modified: 2018-12-11 22:39:07" itemprop="dateModified" datetime="2018-12-11T22:39:07+08:00">2018-12-11</time>
               
             
           </span>
@@ -814,7 +983,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -831,7 +1000,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -848,7 +1019,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -1045,6 +1218,8 @@
   
     
       
+    
+      
         
       
     
@@ -1073,30 +1248,13 @@
         }
     });
 </script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 <style>
 .MathJax_Display {
     overflow: auto hidden;
 }
-</style><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
+</style><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
     
   
@@ -1120,6 +1278,8 @@
 
   
   
+    
+      
     
       
     

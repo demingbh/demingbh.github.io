@@ -118,7 +118,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2018/12/11/bag-of-tricks-for-image-cls-with-cnn/bag-tricks-figure-1.png">
 <meta property="og:image" content="http://yoursite.com/2018/12/11/bag-of-tricks-for-image-cls-with-cnn/bag-tricks-figure-2.png">
-<meta property="og:updated_time" content="2018-12-11T06:17:28.349Z">
+<meta property="og:updated_time" content="2018-12-11T14:14:08.951Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="论文笔记 - Bag of Tricks for Image Classification with Convolutional Neural Networks">
 <meta name="twitter:description" content="arXiv:1812.01187 - Bag of Tricks for Image Classification with Convolutional Neural Networks Contents1. Introduction training procedure and model architecture refinements  2. Training Proceduresprepro">
@@ -380,7 +380,7 @@
                 
               
 
-              <time title="Created: 2018-12-11 12:18:39 / Modified: 14:17:28" itemprop="dateCreated datePublished" datetime="2018-12-11T12:18:39+08:00">2018-12-11</time>
+              <time title="Created: 2018-12-11 12:18:39 / Modified: 22:14:08" itemprop="dateCreated datePublished" datetime="2018-12-11T12:18:39+08:00">2018-12-11</time>
             
 
             
@@ -496,7 +496,7 @@
 <blockquote>
 <p>5.5. 的结果说明中，teacher model 和 student model 属于不同的 family 时，prediction 的分布是不同的，对 distillation 有负面影响。</p>
 </blockquote>
-<h3 id="5-4-Mixup-Training"><a href="#5-4-Mixup-Training" class="headerlink" title="5.4. Mixup Training"></a>5.4. Mixup Training</h3><p>augmentation method: mixup [29]<br>In mixup, each time we randomly sample two examples $(x_i, y_i)$ and $(x_j, y_j)$. Then we form a new example by a weighted linear inerpolation of these two examples:<br>$$ \hat{x} = \lambda x_i + (1-\lambda) x_j, $$<br>$$ \hat{y} = \lambda y_i + (1-\lambda) y_j, $$<br>where $\lambda \in [0,1]$ is a random number drawn from the $\mathbf{Beta}(\alpha,\alpha)$ distribution. In mixup training, we only use the new example $(\hat{x}, \hat{y})$.</p>
+<h3 id="5-4-Mixup-Training"><a href="#5-4-Mixup-Training" class="headerlink" title="5.4. Mixup Training"></a>5.4. Mixup Training</h3><p>augmentation method: mixup [29]<br>In mixup, each time we randomly sample two examples $(x_i, y_i)$ and $(x_j, y_j)$. Then we form a new example by a weighted linear inerpolation of these two examples:<br>$$\begin{align}<br>\hat{x} = \lambda x_i + (1-\lambda) x_j, \nonumber \\<br>\hat{y} = \lambda y_i + (1-\lambda) y_j, \nonumber<br>\end{align}$$<br>where $\lambda \in [0,1]$ is a random number drawn from the $\mathbf{Beta}(\alpha,\alpha)$ distribution. In mixup training, we only use the new example $(\hat{x}, \hat{y})$.</p>
 <h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><ul>
 <li>NASNet [34]<br>cvpr2018 - Learning Transferable Architectures for Scalable Image Recognition</li>
 <li>MobileNet [11]</li>
@@ -548,8 +548,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/08/caffe-1-0-data-reading/" rel="next" title="caffe-1.0 代码分析：数据读取">
-                <i class="fa fa-chevron-left"></i> caffe-1.0 代码分析：数据读取
+              <a href="/2018/12/08/caffe-1-0-data-reading/" rel="next" title="caffe-1.0 代码分析 - 数据读取">
+                <i class="fa fa-chevron-left"></i> caffe-1.0 代码分析 - 数据读取
               </a>
             
           </div>
@@ -557,6 +557,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/11/hexo-notes-latex-equations/" rel="prev" title="Hexo Notes - NexT 主题下的 LaTeX 公式设置">
+                Hexo Notes - NexT 主题下的 LaTeX 公式设置 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -626,7 +630,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -643,7 +647,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -660,7 +666,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -897,30 +905,13 @@
         }
     });
 </script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 <style>
 .MathJax_Display {
     overflow: auto hidden;
 }
-</style><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
+</style><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
     
   
